@@ -1,12 +1,12 @@
 import React from "react";
 import s from './Account.module.scss'
 import cl from 'classnames'
+import {motion} from "framer-motion"
 import {NavLink} from "react-router-dom";
 import loupe from './../../../../assets/images/loupe.svg'
 import Message from "./Message/Message";
 
 const Account = (props) => {
-
     return (
         <div className={s.accountContainer}>
             <div className={cl("background-container", s.account)}>
@@ -21,20 +21,28 @@ const Account = (props) => {
                         <input onKeyUp={props.handleKeyUp} value={props.findByLetters} onChange={e => props.setFindByLetters(e.target.value)} placeholder={'Поиск по номеру или по описанию заявки'} className={cl('input-text', s.input)} id={'search'} type="text"/>
                         <label className={s.searchLabel} htmlFor="search"><button onClick={props.handleSubmit}><img src={loupe} alt="loupe"/></button></label>
                     </div>
-                    {/*{*/}
-                    {/*    props.messages &&*/}
-                    {/*        props.messages.length > 0 ?*/}
-                    {/*        props.messages.map(m => {*/}
-                    {/*            return (*/}
-                    {/*                <Message key={m.id} {...m} />*/}
-                    {/*            )*/}
-                    {/*        })*/}
-                    {/*    :*/}
-                    {/*        <div className={s.accountEmpty}>*/}
-                    {/*            Список заявок пуст*/}
-                    {/*        </div>*/}
-                    {/*}*/}
-                    <Message />
+                    {
+                        props.messages &&
+                            props.messages.length > 0 ?
+                            <motion.div
+                                variants={props.animationContainer}
+                                initial="hidden"
+                                animate="visible"
+                            >
+                                {
+                                    props.messages.map(m => {
+                                        return (
+                                            <Message key={m.id} {...m} animationItem={props.animationItem} />
+                                        )
+                                    })
+                                }
+                            </motion.div>
+                        :
+                            <div className={s.accountEmpty}>
+                                Список заявок пуст
+                            </div>
+                    }
+                    {/*<Message animationItem={props.animationItem} />*/}
                 </div>
             </div>
         </div>
