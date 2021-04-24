@@ -10,6 +10,7 @@
     max-width: 1440px;
     margin: 0 auto;
     position: relative;
+    z-index: 2;
 }
 
 .bottom-clouds {
@@ -19,6 +20,7 @@
     right: 0;
     margin: auto;
     pointer-events: none;
+    z-index: 1;
 }
 
 .primary-button {

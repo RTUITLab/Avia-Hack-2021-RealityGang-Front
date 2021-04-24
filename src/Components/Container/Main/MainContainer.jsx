@@ -7,7 +7,6 @@ import right from '../../../assets/images/top-right.svg'
 import cl from 'classnames'
 import {useSelector} from "react-redux";
 import AccountContainer from "./Account/AccountContainer";
-import TopContainer from "./Top/TopContainer";
 
 const MainContainer = (props) => {
 
@@ -19,7 +18,6 @@ const MainContainer = (props) => {
                 isAuth
                 ?
                     <>
-                        <TopContainer />
                         <AccountContainer />
                     </>
                 :

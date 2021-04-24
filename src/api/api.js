@@ -34,10 +34,20 @@ export const authApi = {
 }
 
 export const messageApi = {
-    getMessages(findByLetters) { //Логин
+    getMessages(findByLetters) { //Получить заявки пользователя
         let data = getFormData([{name: 'find_by_letters', value: findByLetters}])
         const accessToken = 'Bearer ' + localStorage.getItem('accessToken')
         return axios.post(baseUrl +`api/get_messages`, data,
+            {
+                headers: {
+                    'Authorization': `${accessToken}`
+                },
+            })
+    },
+    createMessage(description, file) { //Создать заявку
+        let data = getFormData([{name: 'description', value: description}, {name: 'file', value: file}])
+        const accessToken = 'Bearer ' + localStorage.getItem('accessToken')
+        return axios.post(baseUrl +`api/new_message`, data,
             {
                 headers: {
                     'Authorization': `${accessToken}`

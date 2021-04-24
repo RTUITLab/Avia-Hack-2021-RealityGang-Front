@@ -31,7 +31,7 @@ const Account = (props) => {
                             })
                         :
                             <div className={s.accountEmpty}>
-                                Заявок не найдено
+                                Список заявок пуст
                             </div>
                     }
                 </div>

@@ -35,5 +35,20 @@ export const getMessages = (findByLetters) => { //Получение заяво�
         }
     }
 }
+export const createMessage = (description, file) => { //Создать заявку
+    return async (dispatch) => {
+        try {
+            let response = await messageApi.createMessage(description, file)
+            // if(response.status === 200) {
+            //     dispatch(setMessages(response.data.messages))
+            // }
+            debugger
+        }
+        catch (error) {
+            console.log('createMessage error', error.toJSON())
+            window.alert('createMessage error')
+        }
+    }
+}
 
 export default messageReducer
