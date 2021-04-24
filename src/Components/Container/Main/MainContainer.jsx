@@ -1,5 +1,5 @@
 import React from "react";
-import s from './main.module.scss'
+import s from './Main.module.scss'
 import plane from '../../../assets/images/plane.svg'
 import {NavLink} from "react-router-dom";
 import left from '../../../assets/images/top-left.svg'

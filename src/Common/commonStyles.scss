@@ -1,11 +1,13 @@
 .outer {
     min-height: 100vh;
+    height: 100%;
     width: 100%;
     position: relative;
     background: linear-gradient(#6ca6de, #a5d2f1);
 }
 
 .container {
+    height: 100%;
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
@@ -15,7 +17,7 @@
 
 .bottom-clouds {
     position: fixed;
-    bottom: -280px;
+    bottom: -290px;
     left: 30px;
     right: 0;
     //margin: auto;

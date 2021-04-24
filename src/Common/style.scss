@@ -1,5 +1,6 @@
 $delete-color: #F44848;
 $primary-color: #006bc1;
+$half-opacity-color: rgba(0,0,0,0.5);
 
 @mixin flexible(){
   display: flex;

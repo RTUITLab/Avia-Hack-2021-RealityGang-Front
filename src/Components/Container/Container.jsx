@@ -5,7 +5,7 @@ import CreateMessageContainer from "./CreateMessage/CreateMessageContainer";
 import {useSelector} from "react-redux";
 import TopContainer from "./Main/Top/TopContainer";
 import Pending from "./CreateMessage/Pending/Pending";
-import Test from "./Test/Test";
+import MessageContainer from "./Message/MessageContainer";
 
 const Container = (props) => {
 
@@ -13,25 +13,19 @@ const Container = (props) => {
 
     return (
         <>
+            {
+                isAuth &&
+                    <>
+                        <TopContainer />
+                    </>
+            }
 
-
-                {
-                    isAuth &&
-                        <>
-                            <TopContainer />
-                        </>
-                }
-
-                <Switch>
-                    <Route exact path='/' render={ () => <MainContainer />} />
-                    <div className={'container'}>
-                        <Switch>
-                            <Route exact path='/new' render={ () => <CreateMessageContainer />} />
-                            <Route exact path='/pending' render={ () => <Pending />} />
-                            <Route exact path='/test' render={ () => <Test />} />
-                        </Switch>
-                    </div>
-                </Switch>
+            <Switch>
+                <Route exact path='/' render={ () => <MainContainer />} />
+                <Route exact path='/new' render={ () => <CreateMessageContainer />} />
+                <Route exact path='/pending' render={ () => <Pending />} />
+                <Route exact path='/message' render={ () => <MessageContainer />} />
+            </Switch>
         </>
     )
 }

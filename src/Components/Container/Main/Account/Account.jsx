@@ -4,7 +4,7 @@ import cl from 'classnames'
 import {motion} from "framer-motion"
 import {NavLink} from "react-router-dom";
 import loupe from './../../../../assets/images/loupe.svg'
-import MessageItem from "./Message/MessageItem";
+import MessageItem from "./MessageItem/MessageItem";
 
 const Account = (props) => {
     return (
@@ -43,7 +43,6 @@ const Account = (props) => {
                                 Список заявок пуст
                             </div>
                     }
-                    {/*<MessageItem animationItem={props.animationItem} />*/}
                 </div>
             </div>
         </div>
