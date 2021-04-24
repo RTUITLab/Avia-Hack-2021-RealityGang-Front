@@ -36,3 +36,21 @@
 .primary-button:hover {
     background-color: #0287F2;
 }
+
+.background-container {
+    border-radius: 10px;
+    background-color: #ffffff;
+    margin: auto;
+    padding: 40px;
+}
+
+.input-text {
+    border-radius: 10px;
+    border: solid 1px #a6a6a6;
+    font-size: 14px;
+}
+
+.input-text:focus {
+    box-shadow: 0 0 2px 0 rgba(0, 107, 193, 0.4);
+    border: solid 1px #006bc1;
+}

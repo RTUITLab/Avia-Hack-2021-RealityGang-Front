@@ -1,0 +1,44 @@
+.loginContainer {
+    width: 438px;
+    padding-top: 250px;
+    margin: 0 auto;
+}
+
+.login {
+
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.inputContainer {
+    position: relative;
+    margin-bottom: 22px;
+}
+
+.input {
+    width: 100%;
+    padding: 15px 18px 15px 52px;
+}
+
+.imgLabel {
+    position: absolute;
+    top: 0;
+    left: 18px;
+    bottom: 0;
+    margin: auto;
+
+    & img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+}
+
+.loginBtn {
+    width: 100%;
+}
