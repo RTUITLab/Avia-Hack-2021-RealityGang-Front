@@ -1,0 +1,46 @@
+.main {
+    margin: 0 auto;
+    width: 860px;
+    text-align: center;
+    padding: 220px 0 0;
+    position: relative;
+}
+
+.cloudLeft {
+    left: -200px;
+}
+
+.cloudRight {
+    right: -200px;
+}
+
+.cloudImg {
+    position: absolute;
+    top: -340px;
+    margin: auto;
+}
+
+.planeContainer {
+    margin-bottom: 60px;
+}
+
+.plane {
+
+}
+
+.title {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.subTitle {
+    line-height: 1.43;
+    color: rgba(0, 0, 0, 0.4);
+    margin-bottom: 40px;
+}
+
+.loginButton {
+    width: 220px;
+    margin: 0 auto;
+}

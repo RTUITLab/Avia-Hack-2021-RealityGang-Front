@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="604" height="726" viewBox="0 0 604 726">
+    <defs>
+        <filter id="yrevlr0u1a" width="113.4%" height="116.8%" x="-6.7%" y="-8.4%" filterUnits="objectBoundingBox">
+            <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="8"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0.443137255 0 0 0 0 0.792156863 0 0 0 0.2 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <filter id="3ztadrqtbb" width="113.8%" height="118.5%" x="-6.9%" y="-9.2%" filterUnits="objectBoundingBox">
+            <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="8"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0.368627451 0 0 0 0 0.658823529 0 0 0 0.16 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g fill="#FFF">
+            <g>
+                <g filter="url(#yrevlr0u1a)" transform="translate(215 339) translate(-182.554 -306.303) rotate(108 201.808 288.645)">
+                    <path d="M363.875 369.826c-61.756 0-111.818-43.619-111.818-97.427 0-53.808 50.063-97.429 111.82-97.429 61.755 0 111.817 43.62 111.817 97.427 0 53.808-50.064 97.429-111.82 97.43z" transform="scale(-1 1) rotate(-17 0 2707.145)"/>
+                    <path d="M282.05 316.934c-34.708 0-62.844-41.23-62.843-92.09 0-50.86 28.136-92.09 62.844-92.09 34.707 0 62.843 41.23 62.843 92.09 0 50.86-28.137 92.09-62.845 92.09z" transform="scale(-1 1) rotate(-17 0 2112.085)"/>
+                    <path d="M168.288 302.076c-74.423 0-134.754-59.952-134.754-133.907.001-73.956 60.333-133.909 134.756-133.91 74.423 0 134.754 59.952 134.753 133.908 0 73.955-60.332 133.908-134.755 133.91z" transform="scale(-1 1) rotate(-17 0 1294.215)"/>
+                </g>
+                <g filter="url(#3ztadrqtbb)" transform="translate(215 339) translate(-182.554 -306.303) rotate(108 207.02 236.397)">
+                    <path d="M361.478 336.546c-56.558 0-102.407-39.948-102.407-89.227 0-49.28 45.85-89.229 102.408-89.23 56.558 0 102.407 39.949 102.407 89.228 0 49.28-45.85 89.229-102.408 89.23z" transform="scale(-1 1) rotate(-17 0 2666.029)"/>
+                    <path d="M281.213 283.887c-33.629 0-60.89-39.949-60.89-89.228 0-49.28 27.262-89.228 60.891-89.229 33.63 0 60.891 39.949 60.89 89.228 0 49.28-27.262 89.229-60.89 89.229z" transform="scale(-1 1) rotate(-17 0 2076.304)"/>
+                    <path d="M146.977 263.408c-64.966 0-117.63-52.39-117.63-117.02.001-64.628 52.666-117.02 117.631-117.021 64.966 0 117.63 52.39 117.63 117.02-.001 64.628-52.666 117.02-117.631 117.021z" transform="scale(-1 1) rotate(-17 0 1129.837)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

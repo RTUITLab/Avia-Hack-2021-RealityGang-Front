@@ -4,6 +4,7 @@ import Container from "./Components/Container/Container";
 import {toast, ToastContainer} from "react-toastify";
 import LoginContainer from "./Components/Login/LoginContainer";
 import {useEffect} from "react";
+import clouds from '../src/assets/images/bottom.svg'
 
 function App() {
 
@@ -15,10 +16,13 @@ function App() {
 
     return (
         <>
-            <Switch>
-                <Route exact path='/login' render={ () => <LoginContainer />} />
-                <Container />
-            </Switch>
+            <div className={'outer'}>
+                <Switch>
+                    <Route exact path='/login' render={ () => <LoginContainer />} />
+                    <Container />
+                </Switch>
+                <img className={'bottom-clouds'} src={clouds} alt="clouds"/>
+            </div>
             <ToastContainer
                 position="bottom-right"
                 autoClose={5000}

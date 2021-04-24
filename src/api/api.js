@@ -3,7 +3,7 @@ import * as axios from "axios";
 let baseUrl = process.env.REACT_APP_PRODUCTION_URL
 
 if(baseUrl === undefined) {
-    window.alert('Не удалось получить доступ к переменной окружения REACT_APP_PRODUCTION_URL')
+    // window.alert('Не удалось получить доступ к переменной окружения REACT_APP_PRODUCTION_URL')
 }
 
 const getFormData = (mass) => {
