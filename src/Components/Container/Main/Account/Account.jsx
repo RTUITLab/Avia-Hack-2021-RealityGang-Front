@@ -21,19 +21,20 @@ const Account = (props) => {
                         <input placeholder={'Поиск по номеру или по описанию заявки'} className={cl('input-text', s.input)} id={'search'} type="text"/>
                         <label className={s.searchLabel} htmlFor="search"><img src={loupe} alt="loupe"/></label>
                     </div>
-                    {
-                        props.messages &&
-                            props.messages.length > 0 ?
-                            props.messages.map(m => {
-                                return (
-                                    <Message key={m.id} {...m} />
-                                )
-                            })
-                        :
-                            <div className={s.accountEmpty}>
-                                Список заявок пуст
-                            </div>
-                    }
+                    {/*{*/}
+                    {/*    props.messages &&*/}
+                    {/*        props.messages.length > 0 ?*/}
+                    {/*        props.messages.map(m => {*/}
+                    {/*            return (*/}
+                    {/*                <Message key={m.id} {...m} />*/}
+                    {/*            )*/}
+                    {/*        })*/}
+                    {/*    :*/}
+                    {/*        <div className={s.accountEmpty}>*/}
+                    {/*            Список заявок пуст*/}
+                    {/*        </div>*/}
+                    {/*}*/}
+                    <Message />
                 </div>
             </div>
         </div>

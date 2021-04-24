@@ -19,15 +19,10 @@
 
 .spinner {
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .spinnerContainer {
-    //position: absolute;
-    //left: 0;
-    //right: 0;
-    //bottom: 0;
-    //top: 0;
     height: 120px;
     width: 120px;
     margin: 0 auto;
@@ -36,7 +31,6 @@
 .plane {
     position: absolute;
     left: -17px;
-    //right: 0;
     bottom: 0;
     top: 0;
     margin: auto;
@@ -61,8 +55,6 @@
     background-color: transparent;
     pointer-events: none;
     position: absolute;
-    //right: 0;
-    //left: 0;
     margin: auto;
     width: 120px;
     height: 120px;
