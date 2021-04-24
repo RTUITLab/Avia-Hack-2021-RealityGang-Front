@@ -13,19 +13,21 @@ const Container = (props) => {
 
     return (
         <>
-            {
-                isAuth &&
-                    <>
-                        <TopContainer />
-                    </>
-            }
+            <div className={'inner'}>
+                {
+                    isAuth &&
+                        <>
+                            <TopContainer />
+                        </>
+                }
 
-            <Switch>
-                <Route exact path='/' render={ () => <MainContainer />} />
-                <Route exact path='/new' render={ () => <CreateMessageContainer />} />
-                <Route exact path='/pending' render={ () => <Pending />} />
-                <Route exact path='/message' render={ () => <MessageContainer />} />
-            </Switch>
+                <Switch>
+                    <Route exact path='/' render={ () => <MainContainer />} />
+                    <Route exact path='/new' render={ () => <CreateMessageContainer />} />
+                    <Route exact path='/pending' render={ () => <Pending />} />
+                    <Route exact path='/message' render={ () => <MessageContainer />} />
+                </Switch>
+            </div>
         </>
     )
 }

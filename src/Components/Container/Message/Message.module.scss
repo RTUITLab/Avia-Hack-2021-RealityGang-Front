@@ -2,7 +2,7 @@
 
 .messageContainer {
     width: 1000px;
-    padding-top: 20vh;
+    padding-top: 10vh;
     margin: 0 auto;
 }
 
@@ -30,6 +30,7 @@
     line-height: 1.71;
     color: $half-opacity-color;
     margin-bottom: 40px;
+    white-space: pre-wrap;
 }
 
 .buttons {
