@@ -16,12 +16,52 @@
 .bottom-clouds {
     position: fixed;
     bottom: -280px;
-    left: 0;
+    left: 30px;
     right: 0;
-    margin: auto;
+    //margin: auto;
     pointer-events: none;
     z-index: 1;
+
+    animation: bottom-clouds-animation;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-duration: 1s;
+    //animation-delay: 1s;
+
+    //transition: all 2s ease-in;
+    //margin: 100px auto 0;
+    //transform: translate(0, -100px);
+    ////transition-duration: 2s;
+    //transition-delay: 0s;
+
 }
+
+@keyframes bottom-clouds-animation {
+    0% {
+        bottom: -600px;
+    }
+
+    100% {
+        bottom: -280px;
+    }
+}
+
+//@keyframes bottom-clouds-animation {
+//    0% {
+//        left: 30px;
+//        right: 0;
+//    }
+//
+//    50% {
+//        left: 0;
+//        //right: 10px;
+//    }
+//
+//    100% {
+//        left: -30px;
+//    }
+//}
 
 .primary-button {
     background-color: #006bc1;

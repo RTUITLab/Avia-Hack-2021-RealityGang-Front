@@ -39,7 +39,6 @@ const CreateMessageContainer = (props) => {
             setFileError(true)
         }
     }
-
     function handleSubmit() {
         if(file.name) {
             dispatch(createMessage())

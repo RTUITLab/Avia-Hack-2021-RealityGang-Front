@@ -8,14 +8,44 @@
 
 .cloudLeft {
     left: -200px;
+    animation: left-clouds-animation;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-duration: 2s;
+}
+
+@keyframes left-clouds-animation {
+    0% {
+        left: -1000px;
+    }
+
+    100% {
+        left: -200px;
+    }
 }
 
 .cloudRight {
     right: -200px;
+    animation: right-clouds-animation;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-duration: 3s;
+}
+
+@keyframes right-clouds-animation {
+    0% {
+        right: -1000px;
+    }
+
+    100% {
+        right: -200px;
+    }
 }
 
 .cloudImg {
-    position: absolute;
+    position: fixed;
     top: -340px;
     margin: auto;
 }

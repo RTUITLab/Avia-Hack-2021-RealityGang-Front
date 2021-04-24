@@ -12,7 +12,9 @@ const TopContainer = (props) => {
     }
 
     return (
-        <Top handleLogout={handleLogout} />
+        <div className={'container'}>
+            <Top handleLogout={handleLogout} />
+        </div>
     )
 }
 

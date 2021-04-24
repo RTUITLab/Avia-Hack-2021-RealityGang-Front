@@ -12,10 +12,24 @@ const AccountContainer = (props) => {
         dispatch(getMessages(findByLetters))
     }, [])
 
+    const handleSubmit = () => {
+        dispatch(getMessages(findByLetters))
+    }
+
+    const handleKeyUp = (e) => {
+        if(e.keyCode === 13) {
+            handleSubmit()
+        }
+    }
+
     const messages = useSelector(state => state.messages.messages);
 
     return (
-        <Account messages={messages} setFindByLetters={setFindByLetters} findByLetters={findByLetters} />
+        <div className={'container'}>
+            <Account messages={messages} setFindByLetters={setFindByLetters} findByLetters={findByLetters}
+                     handleKeyUp={handleKeyUp} handleSubmit={handleSubmit}
+            />
+        </div>
     )
 }
 

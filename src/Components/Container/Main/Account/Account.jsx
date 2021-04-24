@@ -18,8 +18,8 @@ const Account = (props) => {
                 </div>
                 <div className={s.content}>
                     <div className={s.search}>
-                        <input placeholder={'Поиск по номеру или по описанию заявки'} className={cl('input-text', s.input)} id={'search'} type="text"/>
-                        <label className={s.searchLabel} htmlFor="search"><img src={loupe} alt="loupe"/></label>
+                        <input onKeyUp={props.handleKeyUp} value={props.findByLetters} onChange={e => props.setFindByLetters(e.target.value)} placeholder={'Поиск по номеру или по описанию заявки'} className={cl('input-text', s.input)} id={'search'} type="text"/>
+                        <label className={s.searchLabel} htmlFor="search"><button onClick={props.handleSubmit}><img src={loupe} alt="loupe"/></button></label>
                     </div>
                     {/*{*/}
                     {/*    props.messages &&*/}

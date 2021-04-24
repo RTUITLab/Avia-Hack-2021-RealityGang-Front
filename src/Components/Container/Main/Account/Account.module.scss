@@ -50,6 +50,10 @@
     bottom: 0;
     margin: auto;
 
+    & button {
+        cursor: pointer;
+    }
+
     & img {
         position: absolute;
         top: 0;
