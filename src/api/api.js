@@ -24,8 +24,20 @@ export const authApi = {
 
     initializing() { //Проверка на логин
         const accessToken = 'Bearer ' + localStorage.getItem('accessToken')
-        // let data = new FormData();
         return axios.get(baseUrl +`api/is_authenticated`,
+            {
+                headers: {
+                    'Authorization': `${accessToken}`
+                },
+            })
+    },
+}
+
+export const messageApi = {
+    getMessages(findByLetters) { //Логин
+        let data = getFormData([{name: 'find_by_letters', value: findByLetters}])
+        const accessToken = 'Bearer ' + localStorage.getItem('accessToken')
+        return axios.post(baseUrl +`api/get_messages`, data,
             {
                 headers: {
                     'Authorization': `${accessToken}`

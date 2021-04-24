@@ -1,0 +1,26 @@
+@import "./src/Common/style";
+
+.topContainer {
+    padding-top: 40px;
+}
+
+.top {
+    @include flexible();
+    padding: 0 30px;
+    justify-content: space-between;
+}
+
+.logoutBtn {
+    padding: 8px 30px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    color: $primary-color;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.logoutBtn:hover {
+    background-color: #dfdfdf;
+}
