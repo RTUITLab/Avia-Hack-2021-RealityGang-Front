@@ -3,6 +3,7 @@ import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
 import CreateMessage from "./CreateMessage";
 import {useDispatch} from "react-redux";
+import {createMessage} from "../../../redux/message-reducer";
 
 const CreateMessageContainer = (props) => {
 
@@ -39,14 +40,19 @@ const CreateMessageContainer = (props) => {
         }
     }
 
-    function createMessage() {
-        dispatch(createMessage())
+    function handleSubmit() {
+        if(file.name) {
+            dispatch(createMessage())
+        }
+        else {
+            setFileError(true)
+        }
     }
 
     return (
         <CreateMessage
             dragStartHandler={dragStartHandler} dragLeaveHandler={dragLeaveHandler} onDropHandler={onDropHandler}
-            drag={drag} fileError={fileError} file={file} description={description} setDescription={setDescription}
+            drag={drag} fileError={fileError} file={file} description={description} setDescription={setDescription} handleSubmit={handleSubmit}
         />
     )
 }

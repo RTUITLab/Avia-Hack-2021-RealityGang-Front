@@ -4,7 +4,7 @@ import MainContainer from "./Main/MainContainer";
 import CreateMessageContainer from "./CreateMessage/CreateMessageContainer";
 import {useSelector} from "react-redux";
 import TopContainer from "./Main/Top/TopContainer";
-import AccountContainer from "./Main/Account/AccountContainer";
+import Pending from "./CreateMessage/Pending/Pending";
 
 const Container = (props) => {
 
@@ -23,6 +23,7 @@ const Container = (props) => {
 
                 <Switch>
                     <Route exact path='/new' render={ () => <CreateMessageContainer />} />
+                    <Route exact path='/pending' render={ () => <Pending />} />
                     <Route exact path='/' render={ () => <MainContainer />} />
                 </Switch>
             </div>

@@ -80,7 +80,7 @@ const CreateMessage = (props) => {
                     }
                 </div>
 
-                <button type={'submit'} className={cl('primary-button', s.submitBtn)}>
+                <button onClick={props.handleSubmit} type={'submit'} className={cl('primary-button', s.submitBtn)}>
                     Обработать заявку
                 </button>
 
