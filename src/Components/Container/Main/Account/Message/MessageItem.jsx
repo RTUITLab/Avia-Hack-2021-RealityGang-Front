@@ -1,13 +1,14 @@
 import React from "react";
-import s from './Message.module.scss'
+import s from './MessageItem.module.scss'
 import {NavLink} from "react-router-dom";
 import cl from 'classnames'
 import {motion} from "framer-motion"
 
-const Message = (props) => {
+const MessageItem = (props) => {
 
     return (
-        <motion.div variants={props.animationItem}>
+        <motion.div variants={props.animationItem}
+                    transition={{ delay: 0.5 }}>
             <NavLink to={'#'} className={s.message}>
                     <div className={s.top}>
                         <div className={s.name}>
@@ -30,4 +31,4 @@ const Message = (props) => {
     )
 }
 
-export default Message
+export default MessageItem

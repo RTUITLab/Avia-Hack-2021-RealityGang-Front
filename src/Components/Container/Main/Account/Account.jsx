@@ -4,7 +4,7 @@ import cl from 'classnames'
 import {motion} from "framer-motion"
 import {NavLink} from "react-router-dom";
 import loupe from './../../../../assets/images/loupe.svg'
-import Message from "./Message/Message";
+import MessageItem from "./Message/MessageItem";
 
 const Account = (props) => {
     return (
@@ -28,11 +28,12 @@ const Account = (props) => {
                                 variants={props.animationContainer}
                                 initial="hidden"
                                 animate="visible"
+                                transition={{ delay: 0.5 }}
                             >
                                 {
                                     props.messages.map(m => {
                                         return (
-                                            <Message key={m.id} {...m} animationItem={props.animationItem} />
+                                            <MessageItem key={m.id} {...m} animationItem={props.animationItem} />
                                         )
                                     })
                                 }
@@ -42,7 +43,7 @@ const Account = (props) => {
                                 Список заявок пуст
                             </div>
                     }
-                    {/*<Message animationItem={props.animationItem} />*/}
+                    {/*<MessageItem animationItem={props.animationItem} />*/}
                 </div>
             </div>
         </div>

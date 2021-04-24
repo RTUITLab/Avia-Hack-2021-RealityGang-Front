@@ -4,6 +4,7 @@ import {compose} from "redux";
 import CreateMessage from "./CreateMessage";
 import {useDispatch} from "react-redux";
 import {createMessage} from "../../../redux/message-reducer";
+import {motion} from "framer-motion";
 
 const CreateMessageContainer = (props) => {
 
@@ -48,11 +49,27 @@ const CreateMessageContainer = (props) => {
         }
     }
 
+    const animations = {
+        hidden: {
+            opacity: 0,
+            x:0,
+            y: 100,
+        },
+        visible: {
+            opacity: 1,
+            x:0,
+            y:0,
+        }
+    }
+
     return (
-        <CreateMessage
-            dragStartHandler={dragStartHandler} dragLeaveHandler={dragLeaveHandler} onDropHandler={onDropHandler}
-            drag={drag} fileError={fileError} file={file} description={description} setDescription={setDescription} handleSubmit={handleSubmit}
-        />
+        <motion.div variants={animations} initial="hidden" animate="visible"
+                    transition={{ duration: 1 }}>
+            <CreateMessage
+                dragStartHandler={dragStartHandler} dragLeaveHandler={dragLeaveHandler} onDropHandler={onDropHandler}
+                drag={drag} fileError={fileError} file={file} description={description} setDescription={setDescription} handleSubmit={handleSubmit}
+            />
+        </motion.div>
     )
 }
 
