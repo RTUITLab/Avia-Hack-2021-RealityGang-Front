@@ -5,6 +5,9 @@ import {toast, ToastContainer} from "react-toastify";
 import LoginContainer from "./Components/Login/LoginContainer";
 import {useEffect} from "react";
 import clouds from '../src/assets/images/bottom.svg'
+import {useDispatch, useSelector} from "react-redux";
+import {initializing} from "./redux/auth-reducer";
+import Preloader from "./Common/Preloader/Preloader";
 
 function App() {
 
@@ -13,6 +16,17 @@ function App() {
     //     notify()
     // }, []);
 
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(initializing())
+    }, []); // Перезапускать эффект только если count поменялся
+
+    const isInitialize = useSelector(state => state.auth.isInitialize);
+
+    if(!isInitialize) {
+        return <Preloader />
+    }
 
     return (
         <>

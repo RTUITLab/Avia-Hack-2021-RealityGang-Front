@@ -7,22 +7,22 @@ import padlock from '../../assets/images/padlock-active.svg'
 const Login = (props) => {
     return (
         <div className={cl(s.loginContainer)}>
-            <form>
+            {/*<form action=''>*/}
                 <div className={cl('background-container', s.login)}>
                     <h2 className={s.title}>Авторизация</h2>
 
                     <div className={s.inputContainer}>
-                        <input className={cl('input-text', s.input)} id={'login'} required type="text"/>
+                        <input onKeyUp={props.handleKeyUp} value={props.email} onChange={(e) => props.setEmail(e.target.value)} placeholder={'E-mail'} className={cl('input-text', s.input)} id={'login'} required type="text"/>
                         <label className={s.imgLabel} htmlFor="login"><img src={message} alt="message"/></label>
                     </div>
                     <div className={s.inputContainer}>
-                        <input className={cl('input-text' , s.input)} id={'password'} required type="password"/>
+                        <input onKeyUp={props.handleKeyUp} value={props.password} onChange={(e) => props.setPassword(e.target.value)} placeholder={'Password'} className={cl('input-text' , s.input)} id={'password'} required type="password"/>
                         <label className={s.imgLabel} htmlFor="password"><img src={padlock} alt="padlock"/></label>
                     </div>
 
-                    <button type={'submit'} className={cl('primary-button', s.loginBtn)}>Войти</button>
+                    <button onClick={props.handleSubmit} type={'submit'} className={cl('primary-button', s.loginBtn)}>Войти</button>
                 </div>
-            </form>
+            {/*</form>*/}
         </div>
     )
 }

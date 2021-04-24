@@ -17,5 +17,19 @@ const getFormData = (mass) => {
 }
 
 export const authApi = {
+    login(username, password) { //Логин
+        let data = getFormData([{name: 'username', value: username}, {name: 'password', value: password}])
+        return axios.post(baseUrl + `auth/jwt/create`, data)
+    },
 
+    initializing() { //Проверка на логин
+        const accessToken = 'Bearer ' + localStorage.getItem('accessToken')
+        // let data = new FormData();
+        return axios.get(baseUrl +`api/is_authenticated`,
+            {
+                headers: {
+                    'Authorization': `${accessToken}`
+                },
+            })
+    },
 }
