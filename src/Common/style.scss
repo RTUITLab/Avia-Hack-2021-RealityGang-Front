@@ -1,0 +1,7 @@
+$delete-color: #F44848;
+$primary-color: blue;
+
+@mixin flexible(){
+  display: flex;
+  align-items: center;
+}

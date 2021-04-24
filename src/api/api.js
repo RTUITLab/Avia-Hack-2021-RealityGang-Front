@@ -16,6 +16,6 @@ const getFormData = (mass) => {
     return formdata;
 }
 
-export const newsApi = {
+export const authApi = {
 
 }
