@@ -138,8 +138,11 @@
 }
 
 .footerDownload {
-  width: 380px;
-  & img {
-    margin-right: 15px;
-  }
+    @include flexible();
+    justify-content: center;
+    width: 380px;
+    & img {
+    display: block;
+      margin-right: 10px;
+    }
 }
