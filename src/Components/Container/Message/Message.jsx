@@ -55,39 +55,44 @@ const Message = (props) => {
     return (
         <div className={s.messageContainer}>
             <div className={cl('background-container', s.message)}>
-                <div className={s.content}>
-                    <div className={s.info}>
-                        <h2 className={s.title}>Заявка №{props.messageItem.id}</h2>
-                        <div className={s.description}>
-                            {props.messageItem.description}
+                <div className={s.top}>
+                    <div className={s.content}>
+                        <div className={s.info}>
+                            <h2 className={s.title}>Заявка №{props.messageItem.id}</h2>
+                            <div className={s.description}>
+                                {props.messageItem.description}
+                            </div>
+                        </div>
+                        <div className={s.buttonsContainer}>
+                            <div className={s.buttons}>
+                                <a target={'_blank'} href={props.messageItem.correct} download className={cl('primary-button', s.smallDownload, s.correct)}>
+                                    Скачать некорректные данные
+                                </a>
+
+                                <a target={'_blank'} href={props.messageItem.incorrect} download className={cl('primary-button', s.smallDownload, s.incorrect)}>
+                                    Скачать корректные данные
+                                </a>
+                            </div>
+                            <NavLink className={s.linkBack} to={'/'}>
+                                Вернуться на главный экран
+                            </NavLink>
                         </div>
                     </div>
-                    <div className={s.buttonsContainer}>
-                        <div className={s.buttons}>
-                            <a href={props.messageItem.correct} download className={cl('primary-button', s.smallDownload)}>
-                                correct
-                            </a>
-                            <a href={props.messageItem.kml} download className={cl('primary-button', s.smallDownload)}>
-                                kml
-                            </a>
-                            <a href={props.messageItem.incorrect} download className={cl('primary-button', s.smallDownload)}>
-                                incorrect
-                            </a>
+                    <div className={s.graphicContainer}>
+                        <div className={s.graphicTitle}>
+                            Диаграмма
                         </div>
-                        <a className={cl('primary-button', s.download)} href={'#'} rel={'noreferrer noopener'} download>Скачать обработанный файл <img src={download} alt="download"/></a>
-                        <NavLink className={s.linkBack} to={'/'}>
-                            Вернуться на главный экран
-                        </NavLink>
+                        <Bar data={data}
+                             className={s.bar}
+                             options={options}
+                        />
                     </div>
                 </div>
-                <div className={s.graphicContainer}>
-                    <div className={s.graphicTitle}>
-                        Диаграмма
-                    </div>
-                    <Bar data={data}
-                         className={s.bar}
-                         options={options}
-                    />
+                <div className={s.footer}>
+                    <a target={'_blank'} href={props.messageItem.kml} download className={cl('primary-button', s.kml)}>
+                        Скачать KML
+                    </a>
+                    <a target={'_blank'} className={cl('primary-button', s.footerDownload)} href={props.messageItem.answer} rel={'noreferrer noopener'} download><img src={download} alt="download"/>Скачать обработанный файл</a>
                 </div>
             </div>
         </div>
