@@ -11,7 +11,7 @@ const Message = (props) => {
         labels: [''],
         datasets: [
             {
-                label: 'Red',
+                label: 'Correct',
                 data: [12],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -22,7 +22,7 @@ const Message = (props) => {
                 borderWidth: 1,
             },
             {
-                label: 'Blue',
+                label: 'Incorrect',
                 data: [35],
                 backgroundColor: [
                     'rgba(54, 162, 235, 0.2)',
@@ -66,6 +66,9 @@ const Message = (props) => {
                         <div className={s.buttons}>
                             <a href={props.messageItem.correct} className={cl('primary-button', s.smallDownload)}>
                                 correct
+                            </a>
+                            <a href={props.messageItem.kml} className={cl('primary-button', s.smallDownload)}>
+                                kml
                             </a>
                             <a href={props.messageItem.incorrect} className={cl('primary-button', s.smallDownload)}>
                                 incorrect

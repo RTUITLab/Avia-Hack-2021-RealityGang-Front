@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {compose} from "redux";
 import {withRouter} from "react-router-dom";
 import {getCurrentMessage} from "../../../redux/message-reducer";
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 
 
 const MessageContainer = (props) => {
@@ -40,4 +41,5 @@ const MessageContainer = (props) => {
 
 export default compose(
     withRouter,
+    withAuthRedirect,
 )(MessageContainer)
