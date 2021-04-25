@@ -26,28 +26,28 @@ const Account = (props) => {
                     {
                         props.messages &&
                             props.messages.length > 0 ?
-                            <motion.div
-                                variants={props.animationContainer}
-                                initial="hidden"
-                                animate="visible"
-                                transition={{ delay: 0.1 }}
-                            >
-                                {
-                                    props.messages.map(m => {
-                                        return (
-                                            <MessageItem key={m.id} {...m} animationItem={props.animationItem} />
-                                        )
-                                    })
-                                }
-                                <Paginator totalItemsCount={props.count}
-                                    pageSize={props.pageSize}
-                                    currentPage={props.currentPage}
-                                    onPageChanged={props.onPageChanged} />
-                            </motion.div>
+                            <div>
+                                <motion.div
+                                    variants={props.animationContainer}
+                                    initial="hidden"
+                                    animate="visible"
+                                >
+                                    {
+                                        props.messages.map(m => {
+                                            return (
+                                                <MessageItem key={m.id} {...m} animationItem={props.animationItem} />
+                                            )
+                                        })
+                                    }
+                                </motion.div>
+                                    <Paginator totalItemsCount={props.count}
+                                        pageSize={props.pageSize}
+                                        currentPage={props.currentPage}
+                                        onPageChanged={props.onPageChanged} />
+                            </div>
                         :
                             <div className={s.accountEmpty}>
                                 Список заявок пуст
-
                             </div>
                     }
                 </div>

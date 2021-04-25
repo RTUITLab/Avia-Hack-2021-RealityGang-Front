@@ -58,6 +58,7 @@ export const getMessages = (findByLetters, currentPage) => { //Получени�
     return async (dispatch) => {
         try {
             let response = await messageApi.getMessages(findByLetters, currentPage)
+            console.log('getMessages', response)
             if(response.status === 200) {
                 dispatch(setMessages(response.data, currentPage))
             }
