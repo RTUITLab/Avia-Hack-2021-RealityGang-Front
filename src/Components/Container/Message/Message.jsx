@@ -6,13 +6,12 @@ import {NavLink} from "react-router-dom";
 import {Bar} from "react-chartjs-2";
 
 const Message = (props) => {
-
     const data = {
         labels: [''],
         datasets: [
             {
                 label: 'Correct',
-                data: [12],
+                data: [props.correctNum],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                 ],
@@ -23,7 +22,7 @@ const Message = (props) => {
             },
             {
                 label: 'Incorrect',
-                data: [35],
+                data: [props.incorrectNum],
                 backgroundColor: [
                     'rgba(54, 162, 235, 0.2)',
                 ],
@@ -65,12 +64,12 @@ const Message = (props) => {
                         </div>
                         <div className={s.buttonsContainer}>
                             <div className={s.buttons}>
-                                <a target={'_blank'} href={props.messageItem.correct} download className={cl('primary-button', s.smallDownload, s.correct)}>
-                                    Скачать некорректные данные
+                                <a target={'_blank'} rel={'noreferrer noopener'} href={props.messageItem.correct} download className={cl('primary-button', s.smallDownload, s.correct)}>
+                                    Скачать корректные треки
                                 </a>
 
-                                <a target={'_blank'} href={props.messageItem.incorrect} download className={cl('primary-button', s.smallDownload, s.incorrect)}>
-                                    Скачать корректные данные
+                                <a target={'_blank'} rel={'noreferrer noopener'} href={props.messageItem.incorrect} download className={cl('primary-button', s.smallDownload, s.incorrect)}>
+                                    Скачать некорректные треки
                                 </a>
                             </div>
                             <NavLink className={s.linkBack} to={'/'}>
@@ -80,7 +79,7 @@ const Message = (props) => {
                     </div>
                     <div className={s.graphicContainer}>
                         <div className={s.graphicTitle}>
-                            Диаграмма
+                            Треки
                         </div>
                         <Bar data={data}
                              className={s.bar}
@@ -89,7 +88,7 @@ const Message = (props) => {
                     </div>
                 </div>
                 <div className={s.footer}>
-                    <a target={'_blank'} href={props.messageItem.kml} download className={cl('primary-button', s.kml)}>
+                    <a target={'_blank'} rel={'noreferrer noopener'} href={props.messageItem.kml} download className={cl('primary-button', s.kml)}>
                         Скачать KML
                     </a>
                     <a target={'_blank'} className={cl('primary-button', s.footerDownload)} href={props.messageItem.answer} rel={'noreferrer noopener'} download><img src={download} alt="download"/>Скачать обработанный файл</a>

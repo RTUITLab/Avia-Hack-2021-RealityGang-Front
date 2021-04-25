@@ -11,6 +11,8 @@ let initialState = {
     count: 0, //Общее число заявок
     pageSize: 3, //Сколько карточек выводится на странице, пока стоит единица
     currentPage: 1, //Номер текущей страницы
+    correctNum: 0,
+    incorrectNum: 0,
 }
 
 const messageReducer = (state = initialState, action) => {
@@ -28,6 +30,7 @@ const messageReducer = (state = initialState, action) => {
                 isResponseReceived: action.isResponseReceived
             }
         case SET_MESSAGE_ITEM:
+
             return {
                 ...state,
                 messageItem: {
@@ -38,7 +41,9 @@ const messageReducer = (state = initialState, action) => {
                     description: action.messages.description,
                     id: action.messages.id,
                     incorrect: action.messages.incorrect,
-                }
+                },
+                correctNum: action.messages.num_correct,
+                incorrectNum: action.messages.num_incorrect,
             }
         default:
             return state;

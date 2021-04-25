@@ -12,9 +12,10 @@ const MessageContainer = (props) => {
 
     const dispatch = useDispatch()
     const messageItem = useSelector(state => state.messages.messageItem);
+    const incorrectNum = useSelector(state => state.messages.incorrectNum);
+    const correctNum = useSelector(state => state.messages.correctNum);
 
     useEffect(()=> {
-
         dispatch(getCurrentMessage(props.match.params.message_id))
     },[])
 
@@ -34,7 +35,7 @@ const MessageContainer = (props) => {
     return (
         <motion.div variants={animations} initial="hidden" animate="visible"
                     transition={{ duration: 1 }}>
-            <Message messageItem={messageItem} />
+            <Message messageItem={messageItem} correctNum={correctNum} incorrectNum={incorrectNum} />
         </motion.div>
     )
 }

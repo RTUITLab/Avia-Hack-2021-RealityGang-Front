@@ -1,7 +1,7 @@
 import {Switch, Route} from 'react-router-dom'
 import './App.css';
 import Container from "./Components/Container/Container";
-import {toast, ToastContainer} from "react-toastify";
+import {ToastContainer} from "react-toastify";
 import LoginContainer from "./Components/Login/LoginContainer";
 import {useEffect} from "react";
 import clouds from '../src/assets/images/bottom.svg'

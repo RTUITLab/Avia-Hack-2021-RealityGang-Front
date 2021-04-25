@@ -60,24 +60,24 @@
     background-color: #eee !important;
 }
 .correct {
-    color: #ff3a29 !important;
-    border: 1px solid #ff3a29;
+    color: #34b53a !important;
+    border: 1px solid #34b53a;
     margin-bottom: 20px;
 }
 .correct:hover {
     color: white !important;
-    background-color: #ff3a29 !important;
+    background-color: #34b53a !important;
 }
 
 .incorrect {
     margin-bottom: 40px;
-    color: #34b53a !important;
-    border: 1px solid #34b53a ;
+    color: #ff3a29 !important;
+    border: 1px solid #ff3a29 ;
 }
 
 .incorrect:hover {
     color: white !important;
-    background-color: #34b53a !important;
+    background-color: #ff3a29 !important;
 }
 
 .download {

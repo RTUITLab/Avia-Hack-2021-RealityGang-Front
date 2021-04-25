@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {compose} from "redux";
 import s from './CreateMessage.module.scss'
 import cl from 'classnames'

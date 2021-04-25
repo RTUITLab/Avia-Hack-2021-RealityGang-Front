@@ -3,7 +3,6 @@ import s from './Pending.module.scss'
 import cl from 'classnames'
 
 import planeLoader from '../../../../assets/images/palne-loader.svg'
-import {NavLink} from "react-router-dom";
 
 const Pending = (props) => {
 
