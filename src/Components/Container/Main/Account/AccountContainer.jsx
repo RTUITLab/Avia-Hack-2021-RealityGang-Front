@@ -8,14 +8,17 @@ const AccountContainer = (props) => {
 
     const dispatch = useDispatch();
     const [findByLetters, setFindByLetters] = useState('')
-    const [messages, setMessages] = useState([{id: 1}])
+    const messages = useSelector(state => state.messages.messages);
+    const count = useSelector(state => state.messages.count);
+    const pageSize = useSelector(state => state.messages.pageSize);
+    const currentPage = useSelector(state => state.messages.currentPage);
 
     useEffect(()=> {
-        dispatch(getMessages(findByLetters))
+        dispatch(getMessages(findByLetters, 1))
     }, [])
 
     const handleSubmit = () => {
-        dispatch(getMessages(findByLetters))
+        dispatch(getMessages(findByLetters, 1))
     }
 
     const handleKeyUp = (e) => {
@@ -24,7 +27,9 @@ const AccountContainer = (props) => {
         }
     }
 
-    // const messages = useSelector(state => state.messages.messages);
+    const onPageChanged = (pageNumber) => { // Поиск по новой странице + изменение текущей
+        dispatch(getMessages(findByLetters, pageNumber))
+    }
 
     const animationContainer = {
         hidden: {opacity: 1, scale: 1},
@@ -65,7 +70,8 @@ const AccountContainer = (props) => {
                         transition={{ duration: 1 }}>
                 <Account messages={messages} setFindByLetters={setFindByLetters} findByLetters={findByLetters}
                          handleKeyUp={handleKeyUp} handleSubmit={handleSubmit} animationContainer={animationContainer}
-                         animationItem={animationItem}
+                         animationItem={animationItem} onPageChanged={onPageChanged} pageSize={pageSize}
+                         count={count} currentPage={currentPage}
                 />
             </motion.div>
         </div>

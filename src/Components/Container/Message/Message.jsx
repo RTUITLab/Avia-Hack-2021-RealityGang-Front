@@ -64,13 +64,13 @@ const Message = (props) => {
                     </div>
                     <div className={s.buttonsContainer}>
                         <div className={s.buttons}>
-                            <a href={props.messageItem.correct} className={cl('primary-button', s.smallDownload)}>
+                            <a href={props.messageItem.correct} download className={cl('primary-button', s.smallDownload)}>
                                 correct
                             </a>
-                            <a href={props.messageItem.kml} className={cl('primary-button', s.smallDownload)}>
+                            <a href={props.messageItem.kml} download className={cl('primary-button', s.smallDownload)}>
                                 kml
                             </a>
-                            <a href={props.messageItem.incorrect} className={cl('primary-button', s.smallDownload)}>
+                            <a href={props.messageItem.incorrect} download className={cl('primary-button', s.smallDownload)}>
                                 incorrect
                             </a>
                         </div>

@@ -34,10 +34,10 @@ export const authApi = {
 }
 
 export const messageApi = {
-    getMessages(findByLetters) { //Получить заявки пользователя
+    getMessages(findByLetters, currentPage) { //Получить заявки пользователя
         let data = getFormData([{name: 'find_by_letters', value: findByLetters}])
         const accessToken = 'Bearer ' + localStorage.getItem('accessToken')
-        return axios.post(baseUrl +`api/get_messages`, data,
+        return axios.post(baseUrl +`api/get_messages?page=${currentPage}`, data,
             {
                 headers: {
                     'Authorization': `${accessToken}`

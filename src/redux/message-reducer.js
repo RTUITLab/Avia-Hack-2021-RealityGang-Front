@@ -8,6 +8,9 @@ let initialState = {
     messages: [],
     messageItem: {},
     isResponseReceived: false,
+    count: 0, //Общее число заявок
+    pageSize: 3, //Сколько карточек выводится на странице, пока стоит единица
+    currentPage: 1, //Номер текущей страницы
 }
 
 const messageReducer = (state = initialState, action) => {
@@ -15,7 +18,9 @@ const messageReducer = (state = initialState, action) => {
         case SET_MESSAGES:
             return {
                 ...state,
-                messages: action.messages
+                messages: action.data.messages,
+                count: action.data.count,
+                currentPage: action.currentPage,
             }
         case SET_IS_RESPONSE_RECEIVED:
             return {
@@ -28,6 +33,7 @@ const messageReducer = (state = initialState, action) => {
                 messageItem: {
                     answer: action.messages.answer,
                     correct: action.messages.correct,
+                    kml: action.messages.kml,
                     created_at: action.messages.created_at,
                     description: action.messages.description,
                     id: action.messages.id,
@@ -39,16 +45,16 @@ const messageReducer = (state = initialState, action) => {
     }
 }
 
-export const setMessages = (messages) => ({type: SET_MESSAGES, messages})
+export const setMessages = (data, currentPage) => ({type: SET_MESSAGES, data, currentPage})
 export const setMessageItem = (messages) => ({type: SET_MESSAGE_ITEM, messages})
 export const setIsResponseReceived = (isResponseReceived) => ({type: SET_IS_RESPONSE_RECEIVED, isResponseReceived})
 
-export const getMessages = (findByLetters) => { //Получение заявок пользователей
+export const getMessages = (findByLetters, currentPage) => { //Получение заявок пользователей
     return async (dispatch) => {
         try {
-            let response = await messageApi.getMessages(findByLetters)
+            let response = await messageApi.getMessages(findByLetters, currentPage)
             if(response.status === 200) {
-                dispatch(setMessages(response.data.messages))
+                dispatch(setMessages(response.data, currentPage))
             }
         }
         catch (error) {
@@ -61,9 +67,10 @@ export const createMessage = (description, file) => { //Создать заяв�
     return async (dispatch) => {
         try {
             let response = await messageApi.createMessage(description, file)
+            console.log('createMessage', response)
             if(response.status === 200) {
-                dispatch(setIsResponseReceived(true))
                 dispatch(setMessageItem(response.data))
+                dispatch(setIsResponseReceived(true))
             }
         }
         catch (error) {
@@ -77,8 +84,8 @@ export const getCurrentMessage = (id) => { //Получить контретну
     return async (dispatch) => {
         try {
             let response = await messageApi.getCurrentMessage(id)
+            console.log('getCurrentMessage', response)
             if(response.status === 200) {
-                debugger
                 dispatch(setMessageItem(response.data))
             }
         }

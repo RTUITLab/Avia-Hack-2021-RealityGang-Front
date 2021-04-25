@@ -5,8 +5,10 @@ import {motion} from "framer-motion"
 import {NavLink} from "react-router-dom";
 import loupe from './../../../../assets/images/loupe.svg'
 import MessageItem from "./MessageItem/MessageItem";
+import Paginator from '../../../../Common/Paginator/Paginator'
 
 const Account = (props) => {
+
     return (
         <div className={s.accountContainer}>
             <div className={cl("background-container", s.account)}>
@@ -28,7 +30,7 @@ const Account = (props) => {
                                 variants={props.animationContainer}
                                 initial="hidden"
                                 animate="visible"
-                                transition={{ delay: 0.5 }}
+                                transition={{ delay: 0.1 }}
                             >
                                 {
                                     props.messages.map(m => {
@@ -37,10 +39,15 @@ const Account = (props) => {
                                         )
                                     })
                                 }
+                                <Paginator totalItemsCount={props.count}
+                                    pageSize={props.pageSize}
+                                    currentPage={props.currentPage}
+                                    onPageChanged={props.onPageChanged} />
                             </motion.div>
                         :
                             <div className={s.accountEmpty}>
                                 Список заявок пуст
+
                             </div>
                     }
                 </div>
