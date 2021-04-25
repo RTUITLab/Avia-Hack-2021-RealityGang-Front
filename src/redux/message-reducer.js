@@ -83,8 +83,8 @@ export const getCurrentMessage = (id) => { //Получить контретну
             }
         }
         catch (error) {
-            console.log('createMessage error', error.toJSON())
-            window.alert('createMessage error')
+            console.log('getCurrentMessage error', error.toJSON())
+            window.alert('getCurrentMessage error')
         }
     }
 }

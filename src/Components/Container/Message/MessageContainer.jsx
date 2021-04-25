@@ -1,8 +1,21 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Message from "./Message";
 import {motion} from "framer-motion";
+import {useDispatch, useSelector} from "react-redux";
+import {compose} from "redux";
+import {withRouter} from "react-router-dom";
+import {getCurrentMessage} from "../../../redux/message-reducer";
+
 
 const MessageContainer = (props) => {
+
+    const dispatch = useDispatch()
+    const messageItem = useSelector(state => state.messages.messageItem);
+
+    useEffect(()=> {
+
+        dispatch(getCurrentMessage(props.match.params.message_id))
+    },[])
 
     const animations = {
         hidden: {
@@ -20,9 +33,11 @@ const MessageContainer = (props) => {
     return (
         <motion.div variants={animations} initial="hidden" animate="visible"
                     transition={{ duration: 1 }}>
-            <Message />
+            <Message messageItem={messageItem} />
         </motion.div>
     )
 }
 
-export default MessageContainer
+export default compose(
+    withRouter,
+)(MessageContainer)

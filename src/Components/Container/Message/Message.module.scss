@@ -16,6 +16,10 @@
     width: 480px;
     padding-right: 40px;
     border-right: 1px solid #d8d8d8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 357px;
 }
 
 .title {
@@ -34,8 +38,20 @@
 }
 
 .buttons {
+    @include flexible();
     height: 48px;
+    justify-content: space-between;
     margin-bottom: 20px;
+}
+
+.smallDownload {
+    background-color: #a6a6a6 !important;
+    width: 200px;
+    transition: all 0.4s ease;
+}
+
+.smallDownload:hover {
+    background-color: #888 !important;
 }
 
 .download {

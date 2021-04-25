@@ -56,19 +56,30 @@ const Message = (props) => {
         <div className={s.messageContainer}>
             <div className={cl('background-container', s.message)}>
                 <div className={s.content}>
-                    <h2 className={s.title}>Заявка №64728</h2>
-                    <div className={s.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor</div>
-                    <div className={s.buttons}>
-                        Кнопки какие-то
+                    <div className={s.info}>
+                        <h2 className={s.title}>Заявка №{props.messageItem.id}</h2>
+                        <div className={s.description}>
+                            {props.messageItem.description}
+                        </div>
                     </div>
-                    <a className={cl('primary-button', s.download)} href={'#'} rel={'noreferrer noopener'} download>Скачать обработанный файл <img src={download} alt="download"/></a>
-                    <NavLink className={s.linkBack} to={'/'}>
-                        Вернуться на главный экран
-                    </NavLink>
+                    <div className={s.buttonsContainer}>
+                        <div className={s.buttons}>
+                            <a href={props.messageItem.correct} className={cl('primary-button', s.smallDownload)}>
+                                correct
+                            </a>
+                            <a href={props.messageItem.incorrect} className={cl('primary-button', s.smallDownload)}>
+                                incorrect
+                            </a>
+                        </div>
+                        <a className={cl('primary-button', s.download)} href={'#'} rel={'noreferrer noopener'} download>Скачать обработанный файл <img src={download} alt="download"/></a>
+                        <NavLink className={s.linkBack} to={'/'}>
+                            Вернуться на главный экран
+                        </NavLink>
+                    </div>
                 </div>
                 <div className={s.graphicContainer}>
                     <div className={s.graphicTitle}>
-                        Noname
+                        Алекс Ченсов
                     </div>
                     <Bar data={data}
                          className={s.bar}
