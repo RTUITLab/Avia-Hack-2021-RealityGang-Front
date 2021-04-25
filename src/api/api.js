@@ -3,7 +3,7 @@ import * as axios from "axios";
 let baseUrl = process.env.REACT_APP_PRODUCTION_URL
 
 if(baseUrl === undefined) {
-    // window.alert('Не удалось получить доступ к переменной окружения REACT_APP_PRODUCTION_URL')
+    window.alert('Не удалось получить доступ к переменной окружения REACT_APP_PRODUCTION_URL')
 }
 
 const getFormData = (mass) => {
@@ -55,7 +55,6 @@ export const messageApi = {
             })
     },
     getCurrentMessage(id) {
-        // let data = getFormData([{name: 'description', value: description}, {name: 'file', value: file}])
         const accessToken = 'Bearer ' + localStorage.getItem('accessToken')
         return axios.get(baseUrl +`api/message/${id}`,
             {

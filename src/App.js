@@ -35,7 +35,7 @@ function App() {
                     <Route exact path='/login' render={ () => <LoginContainer />} />
                     <Container />
                 </Switch>
-                <img className={'bottom-clouds'} src={clouds} alt="clouds"/>
+                <img width={3000} className={'bottom-clouds'} src={clouds} alt="clouds"/>
             </div>
             <ToastContainer
                 position="bottom-right"

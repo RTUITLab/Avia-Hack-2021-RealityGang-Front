@@ -82,7 +82,7 @@ const Message = (props) => {
                 </div>
                 <div className={s.graphicContainer}>
                     <div className={s.graphicTitle}>
-                        Алекс Ченсов
+                        Диаграмма
                     </div>
                     <Bar data={data}
                          className={s.bar}

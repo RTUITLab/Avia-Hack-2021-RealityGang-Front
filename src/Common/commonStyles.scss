@@ -22,8 +22,8 @@
 
 .bottom-clouds {
     position: fixed;
-    bottom: -290px;
-    left: 30px;
+    bottom: -330px;
+    left: -550px;
     right: 0;
     //margin: auto;
     pointer-events: none;
@@ -50,7 +50,7 @@
     }
 
     100% {
-        bottom: -280px;
+        bottom: -330px;
     }
 }
 
