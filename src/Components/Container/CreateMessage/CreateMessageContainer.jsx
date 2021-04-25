@@ -1,10 +1,12 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
 import CreateMessage from "./CreateMessage";
-import {useDispatch} from "react-redux";
-import {createMessage} from "../../../redux/message-reducer";
+import {useDispatch, useSelector} from "react-redux";
+import {createMessage, setIsResponseReceived} from "../../../redux/message-reducer";
 import {motion} from "framer-motion";
+import Pending from "./Pending/Pending";
+import {Redirect} from "react-router-dom";
 
 const CreateMessageContainer = (props) => {
 
@@ -14,6 +16,16 @@ const CreateMessageContainer = (props) => {
     const [description, setDescription] = useState('')
     const [fileError, setFileError] = useState(false)
     const [file, setFile] = useState('')
+    const [isSubmit, setIsSubmit] = useState(false)
+
+    const isResponseReceived = useSelector(state => state.messages.isResponseReceived);
+    const messageItem = useSelector(state => state.messages.messageItem);
+
+    useEffect(() => {
+        return () => {
+            dispatch(setIsResponseReceived(false))
+        };
+    },[])
 
     function dragStartHandler(e) {
         e.preventDefault()
@@ -42,7 +54,8 @@ const CreateMessageContainer = (props) => {
     }
     function handleSubmit() {
         if(file.name) {
-            dispatch(createMessage())
+            dispatch(createMessage(description, file))
+            setIsSubmit(true)
         }
         else {
             setFileError(true)
@@ -62,6 +75,13 @@ const CreateMessageContainer = (props) => {
         }
     }
 
+    if (isResponseReceived && messageItem.id) {
+        return <Redirect to={`/message/${messageItem.id}`} />
+    }
+
+    if (isSubmit) {
+        return <Pending />
+    }
     return (
         <motion.div variants={animations} initial="hidden" animate="visible"
                     transition={{ duration: 1 }}>

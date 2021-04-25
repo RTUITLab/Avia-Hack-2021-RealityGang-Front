@@ -54,4 +54,14 @@ export const messageApi = {
                 },
             })
     },
+    getCurrentMessage(id) {
+        // let data = getFormData([{name: 'description', value: description}, {name: 'file', value: file}])
+        const accessToken = 'Bearer ' + localStorage.getItem('accessToken')
+        return axios.get(baseUrl +`api/message/${id}`,
+            {
+                headers: {
+                    'Authorization': `${accessToken}`
+                },
+            })
+    }
 }

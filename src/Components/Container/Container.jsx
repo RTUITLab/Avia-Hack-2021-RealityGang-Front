@@ -25,7 +25,7 @@ const Container = (props) => {
                     <Route exact path='/' render={ () => <MainContainer />} />
                     <Route exact path='/new' render={ () => <CreateMessageContainer />} />
                     <Route exact path='/pending' render={ () => <Pending />} />
-                    <Route exact path='/message' render={ () => <MessageContainer />} />
+                    <Route exact path='/message/:message_id' render={ () => <MessageContainer />} />
                 </Switch>
             </div>
         </>

@@ -21,9 +21,6 @@ const Pending = (props) => {
                         </div>
                         <div className={s.text}>Ожидайте</div>
                 </div>
-                <NavLink className={cl('primary-button', s.backLink)} to={'/'}>
-                    Вернуться на главный экран
-                </NavLink>
             </div>
         </div>
     )
